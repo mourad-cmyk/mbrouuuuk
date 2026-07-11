@@ -41,24 +41,27 @@
             overflow: hidden;
         }
 
-        /* --- Scrapbook Sticker Layout --- */
+        /* --- Layout Styles --- */
         .sticker {
             display: block;
             margin: 0 auto 15px auto;
-            height: 110px;
+            max-height: 260px;
             width: auto;
+            border-radius: 16px;
             pointer-events: none;
         }
 
         .sticker-page1 {
+            height: 110px;
             animation: bounce 2s infinite ease-in-out;
             transform: rotate(-3deg);
         }
 
         .sticker-page2 {
-            height: 130px;
-            animation: float 3s infinite ease-in-out;
-            transform: rotate(5deg);
+            max-width: 100%;
+            height: auto;
+            margin: 15px auto;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
         }
 
         .sticker-page3 {
@@ -94,20 +97,22 @@
             letter-spacing: 0.5px;
             display: inline-block;
             margin-bottom: 16px;
+            text-transform: uppercase;
         }
 
         h1 {
-            font-size: 1.75rem;
+            font-size: 1.6rem;
             color: #ff6b8b;
             line-height: 1.3;
             margin-bottom: 16px;
+            font-weight: 800;
         }
 
         p {
-            font-size: 1rem;
+            font-size: 0.95rem;
             line-height: 1.6;
             color: #615054;
-            text-align: left;
+            text-align: center;
             margin-bottom: 16px;
         }
 
@@ -151,11 +156,6 @@
             0%, 100% { transform: translateY(0) rotate(-3deg); }
             50% { transform: translateY(-8px) rotate(2deg); }
         }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0) scale(1) rotate(5deg); }
-            50% { transform: translateY(-10px) scale(1.02) rotate(2deg); }
-        }
     </style>
 </head>
 <body>
@@ -175,15 +175,16 @@
 
         <!-- ================= PAGE 2 ================= -->
         <div id="page2" class="page">
-            <img src="bouquet-cat.jpg" alt="Capoo Bouquet" class="sticker sticker-page2">
-            <h1>Your Dutch Peonies! 🌸</h1>
+            <span class="badge">YOUR FAVORITE PEONIES! 💐</span>
+            <h1>U told me once these were your favorite.</h1>
             <p>
-                U told me once that these are your favorite flours so i thought that these would be the perfect thing i could give you... I really wanted to get you a real gift 3la had l comeback l khayali li drti.
+                I really wanted to get you these Dutch Peonies for your incredible achievement. It's a small digital gesture, but I thought this was the perfect way to celebrate your success. You deserve it!
             </p>
+            <img src="bouquet-cat.jpg" alt="Dutch Peonies Bouquet" class="sticker sticker-page2">
             <p>
-                But unfortunately, jat f w9t li ana ma3ndi fih walo, o parents 7a9din 3lia had liyyam dial nata2ij :(... So please 9bli 3la had small digital gift :3
+                So please accept this digital gift from the bottom of my heart. A real one is coming soon!
             </p>
-            <button class="nav-btn" onclick="navigateToPage(3)">Next... ✨</button>
+            <button class="nav-btn" onclick="navigateToPage(3)">Let's See What's Next 💖</button>
         </div>
 
         <!-- ================= PAGE 3 ================= -->
