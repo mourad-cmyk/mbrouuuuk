@@ -38,14 +38,14 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            overflow: hidden; /* Keeps the slide animation clean inside the card */
+            overflow: hidden;
         }
 
         /* --- Scrapbook Sticker Layout --- */
         .sticker {
             display: block;
             margin: 0 auto 15px auto;
-            height: 95px;
+            height: 110px;
             width: auto;
             pointer-events: none;
         }
@@ -56,13 +56,13 @@
         }
 
         .sticker-page2 {
-            height: 120px;
+            height: 130px;
             animation: float 3s infinite ease-in-out;
             transform: rotate(5deg);
         }
 
         .sticker-page3 {
-            height: 85px;
+            height: 100px;
             transform: rotate(-5deg);
             margin-top: 15px;
         }
@@ -138,25 +138,13 @@
 
         /* --- Custom Motion Keyframes --- */
         @keyframes slideFadeIn {
-            0% {
-                opacity: 0;
-                transform: translateX(60px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateX(0);
-            }
+            0% { opacity: 0; transform: translateX(60px); }
+            100% { opacity: 1; transform: translateX(0); }
         }
 
         @keyframes slideFadeOut {
-            0% {
-                opacity: 1;
-                transform: translateX(0);
-            }
-            100% {
-                opacity: 0;
-                transform: translateX(-60px);
-            }
+            0% { opacity: 1; transform: translateX(0); }
+            100% { opacity: 0; transform: translateX(-60px); }
         }
 
         @keyframes bounce {
@@ -176,7 +164,7 @@
 
         <!-- ================= PAGE 1 ================= -->
         <div id="page1" class="page active">
-            <img src="happy-cat.png" alt="Celebrating Cat" class="sticker sticker-page1">
+            <img src="happy-cat.jpg" alt="Celebrating Cat" class="sticker sticker-page1">
             <span class="badge">MISSION PASSED! 🎉</span>
             <h1>She believed she could, so she did.</h1>
             <p class="center-text">
@@ -187,7 +175,7 @@
 
         <!-- ================= PAGE 2 ================= -->
         <div id="page2" class="page">
-            <img src="bouquet-cat.png" alt="Capoo Bouquet" class="sticker sticker-page2">
+            <img src="bouquet-cat.jpg" alt="Capoo Bouquet" class="sticker sticker-page2">
             <h1>Your Dutch Peonies! 🌸</h1>
             <p>
                 U told me once that these are your favorite flours so i thought that these would be the perfect thing i could give you... I really wanted to get you a real gift 3la had l comeback l khayali li drti.
@@ -210,12 +198,11 @@
             <p class="center-text" style="font-weight: 800; color: #ff477e; font-size: 1.15rem; margin-top: 20px;">
                 I am so unbelievably proud of you!
             </p>
-            <img src="big-eyes.png" alt="Big Eyes Creature" class="sticker sticker-page3">
+            <img src="big-eyes.jpg" alt="Big Eyes Creature" class="sticker sticker-page3">
         </div>
 
     </div>
 
-    <!-- --- Advanced Page Navigation Logic --- -->
     <script>
         function navigateToPage(nextPageNumber) {
             const currentPage = document.querySelector('.page.active');
@@ -223,15 +210,13 @@
             
             if (!currentPage || !nextPage) return;
 
-            // 1. Apply the exit animation to the current page
             currentPage.classList.remove('active');
             currentPage.classList.add('leaving');
 
-            // 2. Wait for the exit animation to finish, then cleanly swap windows
             setTimeout(() => {
                 currentPage.classList.remove('leaving');
                 nextPage.classList.add('active');
-            }, 350); // Matches the speed curve of the exit animation
+            }, 350);
         }
     </script>
 </body>
